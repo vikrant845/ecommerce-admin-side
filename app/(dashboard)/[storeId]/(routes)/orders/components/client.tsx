@@ -7,7 +7,6 @@ import { Plus } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 import { OrderColumn, columns } from "../[orderId]/components/columns";
 import { Separator } from "@/components/ui/separator";
-import ApiList from "@/components/ui/api_list";
 
 interface OrderClientProps {
   data: OrderColumn[]
