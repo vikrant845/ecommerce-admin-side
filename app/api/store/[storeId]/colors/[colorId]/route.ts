@@ -4,9 +4,6 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request, { params }: { params: { storeId: string, colorId: string } }) {
   try {
-    const { userId } = auth();
-
-    if (!userId) return new NextResponse('Unauthorized', { status: 401 });
     if (!params.colorId) return new NextResponse('Catehory Id required', { status: 400 });
 
     const color = await prismadb.color.findUnique({

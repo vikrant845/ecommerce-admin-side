@@ -32,7 +32,7 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
       setLoading(true);
       await axios({
         method: 'DELETE',
-        url: `/api/store/${ params.storeId }/billboards/${ data.id }`
+        url: `/api/store/${ params.storeId }/orders/${ data.id }`
       });
       router.refresh();
       router.push('/');

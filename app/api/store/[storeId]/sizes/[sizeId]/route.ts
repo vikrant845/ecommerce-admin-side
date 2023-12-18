@@ -4,9 +4,6 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request, { params }: { params: { storeId: string, sizeId: string } }) {
   try {
-    const { userId } = auth();
-
-    if (!userId) return new NextResponse('Unauthorized', { status: 401 });
     if (!params.sizeId) return new NextResponse('Catehory Id required', { status: 400 });
 
     const size = await prismadb.size.findUnique({
