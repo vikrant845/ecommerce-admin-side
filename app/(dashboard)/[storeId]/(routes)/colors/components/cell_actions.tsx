@@ -35,7 +35,6 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
         url: `/api/store/${ params.storeId }/colors/${ data.id }`
       });
       router.refresh();
-      router.push('/');
       toast.success('Color deleted');
     } catch (err) {
       console.log(err);

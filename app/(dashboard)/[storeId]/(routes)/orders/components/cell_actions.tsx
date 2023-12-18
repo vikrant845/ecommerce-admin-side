@@ -35,7 +35,6 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
         url: `/api/store/${ params.storeId }/orders/${ data.id }`
       });
       router.refresh();
-      router.push('/');
       toast.success('Billboard deleted');
     } catch (err) {
       console.log(err);

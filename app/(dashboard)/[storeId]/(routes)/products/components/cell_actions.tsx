@@ -35,7 +35,6 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
         url: `/api/store/${ params.storeId }/products/${ data.id }`
       });
       router.refresh();
-      window.location.assign('/');
       toast.success('Product deleted');
     } catch (err) {
       console.log(err);

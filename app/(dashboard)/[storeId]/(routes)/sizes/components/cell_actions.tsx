@@ -35,7 +35,6 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
         url: `/api/store/${ params.storeId }/sizes/${ data.id }`
       });
       router.refresh();
-      router.push('/');
       toast.success('Size deleted');
     } catch (err) {
       console.log(err);
