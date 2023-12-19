@@ -1,7 +1,7 @@
 import prismadb from "@/lib/prismadb"
 
 const getSalesCount = async (storeId: string) => {
-  const salesCount = prismadb.order.count({
+  const salesCount = await prismadb.order.count({
     where: {
       storeId,
       isPaid: true
