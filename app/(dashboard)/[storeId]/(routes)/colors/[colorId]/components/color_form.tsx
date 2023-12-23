@@ -120,9 +120,9 @@ const ColorForm = ({ initialData }: ColorFormProps) => {
               name='name'
               render={ ({ field }) => (
                 <FormItem>
-                  <FormLabel>Label</FormLabel>
+                  <FormLabel>Color Name</FormLabel>
                   <FormControl>
-                    <Input disabled={ isLoading } placeholder='Size Name' { ...field } />
+                    <Input disabled={ isLoading } placeholder='Color Name' { ...field } />
                   </FormControl>
                 </FormItem>
               ) }
@@ -132,7 +132,7 @@ const ColorForm = ({ initialData }: ColorFormProps) => {
               name='value'
               render={ ({ field }) => (
                 <FormItem>
-                  <FormLabel>Label</FormLabel>
+                  <FormLabel>Color HexCode</FormLabel>
                   <FormControl>
                     <div className="flex items-center gap-x-4">
                       <Input disabled={ isLoading } placeholder='Color Value' { ...field } />

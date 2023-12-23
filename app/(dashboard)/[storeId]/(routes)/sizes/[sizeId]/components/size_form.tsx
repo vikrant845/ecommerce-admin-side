@@ -120,7 +120,7 @@ const SizeForm = ({ initialData }: SizeFormProps) => {
               name='name'
               render={ ({ field }) => (
                 <FormItem>
-                  <FormLabel>Label</FormLabel>
+                  <FormLabel>Size Name</FormLabel>
                   <FormControl>
                     <Input disabled={ isLoading } placeholder='Size Name' { ...field } />
                   </FormControl>
@@ -132,9 +132,9 @@ const SizeForm = ({ initialData }: SizeFormProps) => {
               name='value'
               render={ ({ field }) => (
                 <FormItem>
-                  <FormLabel>Label</FormLabel>
+                  <FormLabel>Size Label</FormLabel>
                   <FormControl>
-                    <Input disabled={ isLoading } placeholder='Size Value' { ...field } />
+                    <Input disabled={ isLoading } placeholder='Size Label' { ...field } />
                   </FormControl>
                 </FormItem>
               ) }
