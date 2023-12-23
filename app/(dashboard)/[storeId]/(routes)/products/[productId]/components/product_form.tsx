@@ -43,7 +43,6 @@ type ProductFormType = z.infer<typeof formSchema>;
 const ProductForm = ({ initialData, colors, sizes, categories }: ProductFormProps) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
   
   const [ isLoading, setIsLoading ] = useState(false);
   const [ isOpen, setIsOpen ] = useState(false);
@@ -82,7 +81,6 @@ const ProductForm = ({ initialData, colors, sizes, categories }: ProductFormProp
           data: { ...values, isFeatured: values.isFeatured === 'Yes' ? true : false, isArchived: values.isArchived === 'Yes' ? true : false }
         });
       } else {
-        console.log({ ...values, isFeatured: values.isFeatured === 'Yes' ? true : false, isArchived: values.isArchived === 'Yes' ? true : false });
         await axios({
           method: 'POST',
           url: `/api/store/${ params.storeId }/products`,

@@ -66,6 +66,7 @@ const BillboardForm = ({ initialData, billboards }: CategoryFormProps) => {
         });
       }
       router.refresh();
+      router.push(`/${ params.storeId }/categories`);
       toast.success(toastMessage);
     } catch(err) {
       toast.error('An error occurred');
@@ -83,7 +84,6 @@ const BillboardForm = ({ initialData, billboards }: CategoryFormProps) => {
         url: `/api/${ params.storeId }/categories/${ params.categoryId }`
       });
       router.refresh();
-      router.push('/');
       toast.success('Category Deleted');
     } catch (err) {
       toast.error('An error occurred');

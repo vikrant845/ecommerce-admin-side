@@ -67,6 +67,7 @@ const BillboardForm = ({ initialData }: BillboardFormProps) => {
         });
       }
       router.refresh();
+      router.push(`/${ params.storeId }/billboards`);
       toast.success(toastMessage);
     } catch(err) {
       toast.error('An error occurred');
@@ -84,7 +85,6 @@ const BillboardForm = ({ initialData }: BillboardFormProps) => {
         url: `/api/${ params.storeId }/billboards/${ params.billboardId }`
       });
       router.refresh();
-      router.push('/');
       toast.success('Store Deleted');
     } catch (err) {
       toast.error('An error occurred');

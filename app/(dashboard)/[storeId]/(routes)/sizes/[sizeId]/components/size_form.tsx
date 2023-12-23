@@ -5,7 +5,7 @@ import * as z from 'zod';
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
-import { Billboard, Size, Store } from "@prisma/client";
+import { Size } from "@prisma/client";
 import { Trash } from "lucide-react";
 import { useState } from "react";
 import { useForm } from 'react-hook-form';
@@ -16,9 +16,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import { useParams, useRouter } from 'next/navigation';
 import AlertModal from '@/components/modals/alert_modal';
-import ApiAlert from '@/components/ui/api_alert';
 import { useOrigin } from '@/hooks/use_origin';
-import ImageUpload from '@/components/ui/image_upload';
 
 interface SizeFormProps {
   initialData: Size | null;
@@ -34,7 +32,6 @@ type SizeFormType = z.infer<typeof formSchema>;
 const SizeForm = ({ initialData }: SizeFormProps) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
   
   const [ isLoading, setIsLoading ] = useState(false);
   const [ isOpen, setIsOpen ] = useState(false);
@@ -66,6 +63,7 @@ const SizeForm = ({ initialData }: SizeFormProps) => {
         });
       }
       router.refresh();
+      router.push(`/${ params.storeId }/sizes`);
       toast.success(toastMessage);
     } catch(err) {
       toast.error('An error occurred');

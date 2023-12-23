@@ -32,7 +32,6 @@ type ColorFormType = z.infer<typeof formSchema>;
 const ColorForm = ({ initialData }: ColorFormProps) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
   
   const [ isLoading, setIsLoading ] = useState(false);
   const [ isOpen, setIsOpen ] = useState(false);
