@@ -1,12 +1,15 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { onOpen } from "@/states/slices/modalSlice";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
+import { useDispatch } from "react-redux";
 
 const MainNav = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
   const pathName = usePathname();
   const params = useParams();
+  const dispatch = useDispatch();
   const routes = [
     {
       href: `/${ params.storeId }`,
@@ -63,6 +66,7 @@ const MainNav = ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => 
           { route.label }
         </Link>
       )) }
+      <p className="underline cursor-pointer" onClick={ () => dispatch(onOpen()) }>Show Project Info</p>
     </nav>
   );
 }

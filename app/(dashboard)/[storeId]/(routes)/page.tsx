@@ -3,6 +3,7 @@ import getSalesCount from "@/actions/get_sales_count";
 import getStockCount from "@/actions/get_stock_count";
 import getTotalRevenue from "@/actions/get_total_revenue";
 import Overview from "@/components/overview";
+import ProjectInfoModal from "@/components/project_info_modal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Heading from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
@@ -24,6 +25,7 @@ export default async function DashboardPage({ params }: { params: { storeId: str
   
   return (
     <div className="flex-col">
+      <ProjectInfoModal />
       <div className="flex-1 space-y-4 p-8 pt-6">
         <Heading title="Dashboard" description="Overview of your store" />
         <Separator />
