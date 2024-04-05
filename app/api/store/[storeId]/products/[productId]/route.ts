@@ -40,9 +40,9 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
 
     if (!price) return new NextResponse('Price Not Provided', { status: 400 });
 
-    if (!isFeatured) return new NextResponse('Featured Not Provided', { status: 400 });
+    if (isFeatured === null || isFeatured === undefined) return new NextResponse('Featured Not Provided', { status: 400 });
 
-    if (!isArchived) return new NextResponse('Archived Not Provided', { status: 400 });
+    if (isArchived === null || isArchived === undefined) return new NextResponse('Archived Not Provided', { status: 400 });
 
     if (!categoryId) return new NextResponse('Category ID Not Provided', { status: 400 });
 

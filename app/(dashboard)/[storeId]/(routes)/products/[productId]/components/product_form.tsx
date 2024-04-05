@@ -75,6 +75,7 @@ const ProductForm = ({ initialData, colors, sizes, categories }: ProductFormProp
     try {
       setIsLoading(true);
       if (initialData) {
+        console.log(values);
         await axios({
           method: 'PATCH',
           url: `/api/store/${ params.storeId }/products/${ params.productId }`,
